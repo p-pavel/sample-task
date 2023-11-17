@@ -1,15 +1,3 @@
-/** does some very basic input validation */
-def readData(src: io.Source): TriangleData =
-  val res = src.getLines().map(_.trim).filter(_.nonEmpty).zipWithIndex.map {
-    (line, index) =>
-      val numbers = line.split(" ").map(_.toInt)
-      assert(
-        numbers.length == index + 1,
-        s"Wrong number of data items in line $line"
-      )
-      numbers.toSeq
-  }
-  res.toSeq
 
 class TriangleTest extends munit.FunSuite:
   val taskData = Seq(
