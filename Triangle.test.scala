@@ -1,3 +1,4 @@
+import Path.walkData
 class TriangleTest extends munit.FunSuite:
   test("Building simple path") {
     val w = 10
@@ -13,4 +14,14 @@ class TriangleTest extends munit.FunSuite:
     assertEquals(res, expected)
   }
   
+  test("Task storage") {
+    val taskData = Seq(
+      Seq(7),
+      Seq(6,3),
+      Seq(3,8,5),
+      Seq(11,2,10,9)
+    )
+    val res = walkData(taskData)
+    assertEquals(res, Seq(Path(18, Seq(7,6,3,2))))
+  }
   
