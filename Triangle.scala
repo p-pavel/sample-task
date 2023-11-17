@@ -2,7 +2,12 @@
 type TriangleData = Seq[Seq[Int]]
 type Weight = Int
 
-case class Path(weight: Weight, vertices: Seq[Weight])
+case class Path(weight: Weight, vertices: Seq[Weight]):
+  /** In actual system this method does not belong here
+   * but for the task ... */
+  def formatForResponse = 
+    val pathString =vertices.mkString(" + ") 
+    s"Minimal path is: $pathString  = $weight"
 
 object Path: 
   /** induction basis*/

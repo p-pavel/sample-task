@@ -23,5 +23,6 @@ class TriangleTest extends munit.FunSuite:
     )
     val res = walkData(taskData)
     assertEquals(res, Seq(Path(18, Seq(7,6,3,2))))
+    assertEquals(res.head.formatForResponse, "Minimal path is: 7 + 6 + 3 + 2  = 18")
   }
   
